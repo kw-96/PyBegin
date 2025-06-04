@@ -9,6 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- 跳过链接 -->
+    <a href="#main-content" class="skip-link">跳到主要内容</a>
+    
     <!-- 导航栏 -->
     <nav class="navbar">
         <div class="nav-container">
@@ -24,16 +27,16 @@
                 <li><a href="#docs" class="nav-link">文档中心</a></li>
                 <li><a href="#profile" class="nav-link">个人中心</a></li>
             </ul>
-            <div class="nav-toggle">
+            <button class="nav-toggle" aria-label="切换导航菜单" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
     <!-- 主要内容区域 -->
-    <main class="main-content">
+    <main class="main-content" id="main-content">
         <!-- 首页区域 -->
         <section id="home" class="section active">
             <div class="hero">
@@ -103,20 +106,22 @@
             </div>
             <div class="homework-container">
                 <div class="homework-upload">
-                    <div class="upload-area" id="uploadArea">
-                        <i class="fas fa-cloud-upload-alt"></i>
+                    <div class="upload-area" id="uploadArea" aria-label="文件上传区域，可拖拽文件到此处">
+                        <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
                         <h3>上传作业文件</h3>
                         <p>支持 .py, .zip, .md 格式</p>
-                        <input type="file" id="fileInput" accept=".py,.zip,.md,.txt" multiple>
-                        <button class="btn-primary" onclick="document.getElementById('fileInput').click()">
+                        <input type="file" id="fileInput" accept=".py,.zip,.md,.txt" multiple aria-label="选择作业文件" title="选择作业文件">
+                        <button class="btn-primary" onclick="document.getElementById('fileInput').click()" aria-label="点击选择文件">
                             选择文件
                         </button>
                     </div>
                     <div class="homework-form">
-                        <select id="homeworkWeek" class="form-control">
+                        <label for="homeworkWeek" class="form-label">作业周次</label>
+                        <select id="homeworkWeek" class="form-control" aria-label="选择作业周次">
                             <option value="">选择作业周次</option>
                         </select>
-                        <textarea id="homeworkNotes" class="form-control" placeholder="作业说明或学习笔记..."></textarea>
+                        <label for="homeworkNotes" class="form-label">作业说明</label>
+                        <textarea id="homeworkNotes" class="form-control" placeholder="作业说明或学习笔记..." aria-label="作业说明或学习笔记"></textarea>
                         <button class="btn-primary" id="submitHomework">提交作业</button>
                     </div>
                 </div>
@@ -136,10 +141,11 @@
             <div class="video-container">
                 <div class="video-player">
                     <div class="video-wrapper">
-                        <iframe id="videoFrame" src="" allowfullscreen></iframe>
+                        <iframe id="videoFrame" src="" allowfullscreen title="学习视频播放器"></iframe>
                     </div>
                     <div class="video-controls">
-                        <input type="url" id="videoUrl" placeholder="输入视频链接（支持YouTube、Bilibili等）" class="form-control">
+                        <label for="videoUrl" class="form-label">视频链接</label>
+                        <input type="url" id="videoUrl" placeholder="输入视频链接（支持YouTube、Bilibili等）" class="form-control" aria-label="输入视频链接">
                         <button id="loadVideo" class="btn-primary">加载视频</button>
                     </div>
                 </div>
@@ -147,8 +153,10 @@
                     <h3>视频列表</h3>
                     <div id="videoList" class="video-episodes"></div>
                     <div class="add-episode">
-                        <input type="text" id="episodeTitle" placeholder="集数标题" class="form-control">
-                        <input type="url" id="episodeUrl" placeholder="视频链接" class="form-control">
+                        <label for="episodeTitle" class="form-label">集数标题</label>
+                        <input type="text" id="episodeTitle" placeholder="集数标题" class="form-control" aria-label="集数标题">
+                        <label for="episodeUrl" class="form-label">视频链接</label>
+                        <input type="url" id="episodeUrl" placeholder="视频链接" class="form-control" aria-label="视频链接">
                         <button id="addEpisode" class="btn-secondary">添加集数</button>
                     </div>
                 </div>
@@ -163,7 +171,8 @@
             </div>
             <div class="docs-container">
                 <div class="docs-search">
-                    <input type="text" id="docSearch" placeholder="搜索Python库..." class="form-control">
+                    <label for="docSearch" class="form-label">搜索Python库</label>
+                    <input type="text" id="docSearch" placeholder="搜索Python库..." class="form-control" aria-label="搜索Python库">
                     <button id="searchDocs" class="btn-primary">搜索</button>
                 </div>
                 <div class="docs-categories">
@@ -193,7 +202,8 @@
                             <i class="fas fa-user"></i>
                         </div>
                         <div class="profile-details">
-                            <input type="text" id="userName" placeholder="输入您的姓名" class="form-control">
+                            <label for="userName" class="form-label">您的姓名</label>
+                            <input type="text" id="userName" placeholder="输入您的姓名" class="form-control" aria-label="输入您的姓名">
                             <button id="saveProfile" class="btn-primary">保存信息</button>
                         </div>
                     </div>
