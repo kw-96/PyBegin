@@ -526,7 +526,6 @@ window.addEventListener('beforeunload', function() {
 // 错误处理
 window.addEventListener('error', function(e) {
     console.error('应用错误:', e.error);
-    showNotification('应用出现错误，请刷新页面', 'error');
 });
 
 // 季度标签切换
@@ -602,17 +601,7 @@ function saveData() {
     localStorage.setItem('pybegin_videos', JSON.stringify(videoPlaylist));
 }
 
-// 显示通知
-function showNotification(message, type = 'success') {
-    const notification = document.getElementById('notification');
-    notification.textContent = message;
-    notification.className = `notification ${type}`;
-    notification.classList.add('show');
-    
-    setTimeout(() => {
-        notification.classList.remove('show');
-    }, 3000);
-}
+
 
 
 
@@ -622,16 +611,15 @@ function showNotification(message, type = 'success') {
 function loadVideo() {
     const videoUrl = document.getElementById('videoUrl').value.trim();
     if (!videoUrl) {
-        showNotification('请输入视频链接', 'error');
+        alert('请输入视频链接');
         return;
     }
     
     const embedUrl = convertToEmbedUrl(videoUrl);
     if (embedUrl) {
         document.getElementById('videoFrame').src = embedUrl;
-        showNotification('视频加载成功', 'success');
     } else {
-        showNotification('不支持的视频链接格式', 'error');
+        alert('不支持的视频链接格式');
     }
 }
 
@@ -663,7 +651,7 @@ function addEpisode() {
     const url = document.getElementById('episodeUrl').value.trim();
     
     if (!title || !url) {
-        showNotification('请填写集数标题和链接', 'error');
+        alert('请填写集数标题和链接');
         return;
     }
     
@@ -676,7 +664,7 @@ function addEpisode() {
     };
     
     if (!episode.embedUrl) {
-        showNotification('视频链接格式不正确', 'error');
+        alert('视频链接格式不正确');
         return;
     }
     
@@ -686,8 +674,6 @@ function addEpisode() {
     
     document.getElementById('episodeTitle').value = '';
     document.getElementById('episodeUrl').value = '';
-    
-    showNotification('视频集数添加成功', 'success');
 }
 
 function renderVideoPlaylist() {
@@ -731,7 +717,6 @@ function deleteEpisode(event, episodeId) {
         videoPlaylist.splice(index, 1);
         saveData();
         renderVideoPlaylist();
-        showNotification('视频集数已删除', 'success');
     }
 }
 
@@ -801,9 +786,6 @@ function toggleGoalCompletion(week) {
     currentUser.progress[week] = !currentUser.progress[week];
     saveData();
     renderLearningGoals();
-    
-    const status = currentUser.progress[week] ? '完成' : '未完成';
-    showNotification(`${week} 标记为${status}`, 'success');
 }
 
 console.log('PyBegin 学习平台已初始化完成！');

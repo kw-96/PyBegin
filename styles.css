@@ -26,10 +26,13 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 60px; /* 为固定页脚留出空间 */
+    background: var(--bg-color);
     color: var(--text-primary);
-    background-color: var(--light-color);
+    line-height: 1.6;
 }
 
 /* 导航栏样式 */
@@ -835,31 +838,25 @@ body {
     color: var(--text-primary);
 }
 
-/* 通知样式 */
-.notification {
+
+
+/* 页脚样式 */
+.footer {
+    background: var(--text-primary);
+    color: #8e8e93;
+    padding: 1rem 0;
+    text-align: center;
     position: fixed;
-    top: 100px;
-    right: 20px;
-    background: white;
-    border-left: 4px solid var(--success-color);
-    padding: 1rem 1.5rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-lg);
-    z-index: 1500;
-    transform: translateX(400px);
-    transition: var(--transition);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
 }
 
-.notification.show {
-    transform: translateX(0);
-}
-
-.notification.error {
-    border-left-color: var(--error-color);
-}
-
-.notification.warning {
-    border-left-color: var(--warning-color);
+.footer-text {
+    margin: 0;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
 }
 
 /* 响应式设计 */
