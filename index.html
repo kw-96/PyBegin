@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyBegin - Python零基础学习平台</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fab fa-python"></i>
+                <span>PyBegin</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">首页</a></li>
+                <li><a href="#goals" class="nav-link">学习目标</a></li>
+                <li><a href="#homework" class="nav-link">作业管理</a></li>
+                <li><a href="#videos" class="nav-link">视频学习</a></li>
+                <li><a href="#docs" class="nav-link">文档中心</a></li>
+                <li><a href="#profile" class="nav-link">个人中心</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <main class="main-content">
+        <!-- 首页区域 -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>欢迎来到 PyBegin</h1>
+                    <p>专为Python零基础学习者打造的学习平台</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" id="completedGoals">0</span>
+                            <span class="stat-label">已完成目标</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="totalBadges">0</span>
+                            <span class="stat-label">获得勋章</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="submittedHomework">0</span>
+                            <span class="stat-label">提交作业</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <i class="fab fa-python"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- 学习目标区域 -->
+        <section id="goals" class="section">
+            <div class="section-header">
+                <h2>学习目标规划</h2>
+                <p>按照季度规划，逐步掌握Python编程技能</p>
+            </div>
+            <div class="goals-container">
+                <div class="quarter-tabs">
+                    <button class="tab-btn active" data-quarter="1">第一季度</button>
+                    <button class="tab-btn" data-quarter="2">第二季度</button>
+                    <button class="tab-btn" data-quarter="3">第三季度</button>
+                    <button class="tab-btn" data-quarter="4">第四季度</button>
+                </div>
+                <div class="goals-content">
+                    <div class="quarter-content active" data-quarter="1">
+                        <h3>Python基础项目（12周）</h3>
+                        <div class="goals-grid" id="quarter1Goals"></div>
+                    </div>
+                    <div class="quarter-content" data-quarter="2">
+                        <h3>Web开发项目（13周）</h3>
+                        <div class="goals-grid" id="quarter2Goals"></div>
+                    </div>
+                    <div class="quarter-content" data-quarter="3">
+                        <h3>桌面应用与数据科学（13周）</h3>
+                        <div class="goals-grid" id="quarter3Goals"></div>
+                    </div>
+                    <div class="quarter-content" data-quarter="4">
+                        <h3>综合项目与专业化（13周）</h3>
+                        <div class="goals-grid" id="quarter4Goals"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 作业管理区域 -->
+        <section id="homework" class="section">
+            <div class="section-header">
+                <h2>作业管理</h2>
+                <p>上传、预览和管理您的学习作业</p>
+            </div>
+            <div class="homework-container">
+                <div class="homework-upload">
+                    <div class="upload-area" id="uploadArea">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>上传作业文件</h3>
+                        <p>支持 .py, .zip, .md 格式</p>
+                        <input type="file" id="fileInput" accept=".py,.zip,.md,.txt" multiple>
+                        <button class="btn-primary" onclick="document.getElementById('fileInput').click()">
+                            选择文件
+                        </button>
+                    </div>
+                    <div class="homework-form">
+                        <select id="homeworkWeek" class="form-control">
+                            <option value="">选择作业周次</option>
+                        </select>
+                        <textarea id="homeworkNotes" class="form-control" placeholder="作业说明或学习笔记..."></textarea>
+                        <button class="btn-primary" id="submitHomework">提交作业</button>
+                    </div>
+                </div>
+                <div class="homework-list">
+                    <h3>已提交作业</h3>
+                    <div id="homeworkList" class="homework-items"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 视频学习区域 -->
+        <section id="videos" class="section">
+            <div class="section-header">
+                <h2>视频学习</h2>
+                <p>观看Python学习视频，选择不同集数</p>
+            </div>
+            <div class="video-container">
+                <div class="video-player">
+                    <div class="video-wrapper">
+                        <iframe id="videoFrame" src="" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-controls">
+                        <input type="url" id="videoUrl" placeholder="输入视频链接（支持YouTube、Bilibili等）" class="form-control">
+                        <button id="loadVideo" class="btn-primary">加载视频</button>
+                    </div>
+                </div>
+                <div class="video-playlist">
+                    <h3>视频列表</h3>
+                    <div id="videoList" class="video-episodes"></div>
+                    <div class="add-episode">
+                        <input type="text" id="episodeTitle" placeholder="集数标题" class="form-control">
+                        <input type="url" id="episodeUrl" placeholder="视频链接" class="form-control">
+                        <button id="addEpisode" class="btn-secondary">添加集数</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 文档学习区域 -->
+        <section id="docs" class="section">
+            <div class="section-header">
+                <h2>Python库文档中心</h2>
+                <p>查询和学习Python常用库的使用方法</p>
+            </div>
+            <div class="docs-container">
+                <div class="docs-search">
+                    <input type="text" id="docSearch" placeholder="搜索Python库..." class="form-control">
+                    <button id="searchDocs" class="btn-primary">搜索</button>
+                </div>
+                <div class="docs-categories">
+                    <div class="category-tabs">
+                        <button class="tab-btn active" data-category="basic">基础库</button>
+                        <button class="tab-btn" data-category="web">Web开发</button>
+                        <button class="tab-btn" data-category="data">数据科学</button>
+                        <button class="tab-btn" data-category="gui">GUI开发</button>
+                    </div>
+                </div>
+                <div class="docs-content">
+                    <div id="docsGrid" class="docs-grid"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 个人中心区域 -->
+        <section id="profile" class="section">
+            <div class="section-header">
+                <h2>个人中心</h2>
+                <p>管理您的学习信息和成就</p>
+            </div>
+            <div class="profile-container">
+                <div class="profile-info">
+                    <div class="profile-card">
+                        <div class="profile-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="profile-details">
+                            <input type="text" id="userName" placeholder="输入您的姓名" class="form-control">
+                            <button id="saveProfile" class="btn-primary">保存信息</button>
+                        </div>
+                    </div>
+                    <div class="progress-overview">
+                        <h3>学习进度</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="overallProgress"></div>
+                        </div>
+                        <span id="progressText">0%</span>
+                    </div>
+                </div>
+                <div class="badges-section">
+                    <h3>获得勋章</h3>
+                    <div id="badgesContainer" class="badges-grid"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 模态框 -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- 通知提示 -->
+    <div id="notification" class="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
