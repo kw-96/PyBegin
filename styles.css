@@ -74,41 +74,66 @@ body {
     gap: 2rem;
 }
 
+/* 导航链接样式 */
 .nav-link {
+    /* 移除默认的文本装饰 */
     text-decoration: none;
+    /* 设置链接颜色为次要文本颜色 */
     color: var(--text-secondary);
+    /* 设置字体粗细为中等 */
     font-weight: 500;
+    /* 添加过渡效果，使用预定义的过渡变量 */
     transition: var(--transition);
+    /* 设置相对定位，为可能的伪元素做准备 */
     position: relative;
 }
 
+/* 导航链接悬停和激活状态 */
 .nav-link:hover,
 .nav-link.active {
     color: var(--primary-color);
 }
 
+/* 激活状态下的导航链接下划线效果 */
 .nav-link.active::after {
+    /* 创建伪元素作为下划线 */
     content: '';
+    /* 设置绝对定位 */
     position: absolute;
+    /* 将下划线定位到链接文本下方 */
     bottom: -0.5rem;
+    /* 设置下划线宽度与链接文本相同 */
     left: 0;
     right: 0;
+    /* 设置下划线高度 */
     height: 2px;
+    /* 设置下划线颜色为主色调 */
     background: var(--primary-color);
+    /* 添加圆角效果 */
     border-radius: 1px;
 }
 
+/* 导航栏切换按钮样式 */
 .nav-toggle {
+    /* 默认隐藏导航栏切换按钮 */
     display: none;
+    /* 设置为列布局 */
     flex-direction: column;
+    /* 鼠标悬停时显示指针样式 */
     cursor: pointer;
 }
 
+/* 导航栏切换按钮的横线样式 */
 .nav-toggle span {
+    /* 设置横线宽度 */
     width: 25px;
+    /* 设置横线高度 */
     height: 3px;
+    /* 设置横线颜色为主要文本颜色 */
     background: var(--text-primary);
+    /* 设置横线之间的间距 */
     margin: 3px 0;
+    /* 添加过渡效果 */
     transition: var(--transition);
 }
 
@@ -1082,6 +1107,16 @@ body {
 *:focus {
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
+}
+
+/* 移除导航链接的焦点轮廓 */
+.nav-link:focus {
+    outline: none;
+}
+
+/* 移除tab按钮的焦点轮廓 */
+.tab-btn:focus {
+    outline: none;
 }
 
 /* 跳过链接（屏幕阅读器用户） */
