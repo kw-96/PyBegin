@@ -17,7 +17,7 @@ let userBadges = [];
 const learningGoals = {
     1: [
         {
-            week: '第1周',
+            week: '01',
             title: '个人信息卡片生成器',
             description: '安装与配置、Python基础语法、变量、字符串操作',
             skills: ['Python安装配置', 'print()和input()', '字符串格式化', '基础文件操作'],
@@ -25,7 +25,7 @@ const learningGoals = {
             keyPoints: ['f-string格式化', '文件读写', '用户交互']
         },
         {
-            week: '第2周',
+            week: '02',
             title: '智能计算器',
             description: '条件判断、循环、异常处理',
             skills: ['if/elif/else条件判断', 'while循环', 'try/except异常处理', '列表存储历史'],
@@ -33,7 +33,7 @@ const learningGoals = {
             keyPoints: ['条件分支', '循环控制', '异常处理', '数据存储']
         },
         {
-            week: '第3周',
+            week: '03',
             title: '学生成绩管理系统',
             description: '列表、字典、函数封装',
             skills: ['列表和字典操作', '函数定义和调用', '数据统计和排序', '类的基础概念'],
@@ -41,7 +41,7 @@ const learningGoals = {
             keyPoints: ['数据结构', '函数封装', '统计计算', '面向对象初步']
         },
         {
-            week: '第4周',
+            week: '04',
             title: '密码管理器',
             description: '文件操作、加密、数据持久化',
             skills: ['CSV文件读写', '简单加密算法', '正则表达式验证', '安全性设计'],
@@ -49,7 +49,7 @@ const learningGoals = {
             keyPoints: ['文件操作', '数据加密', '输入验证', '安全编程']
         },
         {
-            week: '第5周',
+            week: '05',
             title: '待办事项管理器',
             description: 'JSON数据处理、日期时间操作',
             skills: ['JSON文件操作', 'datetime模块', '任务优先级', '数据过滤和搜索'],
@@ -57,7 +57,7 @@ const learningGoals = {
             keyPoints: ['JSON处理', '时间计算', '数据管理', '用户体验']
         },
         {
-            week: '第6周',
+            week: '06',
             title: '文件整理工具',
             description: 'os模块、文件系统操作',
             skills: ['os和pathlib模块', '文件批量操作', '目录遍历', '文件分类'],
@@ -65,7 +65,7 @@ const learningGoals = {
             keyPoints: ['文件系统', '批量处理', '正则匹配', '工具开发']
         },
         {
-            week: '第7周',
+            week: '07',
             title: '天气查询应用',
             description: 'API调用、JSON解析、网络编程',
             skills: ['requests库使用', 'API接口调用', 'JSON数据解析', '异常处理'],
@@ -73,7 +73,7 @@ const learningGoals = {
             keyPoints: ['网络请求', 'API使用', '数据解析', '外部服务集成']
         },
         {
-            week: '第8周',
+            week: '08',
             title: '词汇学习系统',
             description: '随机算法、数据统计、学习记录',
             skills: ['random模块使用', '学习算法', '进度跟踪', '数据可视化基础'],
@@ -81,7 +81,7 @@ const learningGoals = {
             keyPoints: ['随机选择', '学习算法', '进度追踪', '用户激励']
         },
         {
-            week: '第9周',
+            week: '09',
             title: '简易博客系统',
             description: '模板系统、静态网站生成',
             skills: ['Jinja2模板', 'HTML生成', '文章管理', '静态部署'],
@@ -89,7 +89,7 @@ const learningGoals = {
             keyPoints: ['模板引擎', 'HTML生成', '内容管理', '静态部署']
         },
         {
-            week: '第10周',
+            week: '10',
             title: '图片处理工具',
             description: 'PIL库使用、图像处理基础',
             skills: ['PIL/Pillow库', '图像尺寸调整', '水印添加', '批量处理'],
@@ -97,7 +97,7 @@ const learningGoals = {
             keyPoints: ['图像处理', '批量操作', '文件转换', '图形编程']
         },
         {
-            week: '第11周',
+            week: '11',
             title: '数据分析工具',
             description: 'pandas基础、数据清洗',
             skills: ['pandas基础操作', 'CSV数据处理', '数据清洗', '简单统计'],
@@ -105,7 +105,7 @@ const learningGoals = {
             keyPoints: ['数据处理', '统计分析', '报告生成', '数据科学入门']
         },
         {
-            week: '第12周',
+            week: '12',
             title: '游戏：猜数字Plus',
             description: '游戏逻辑、用户体验、综合应用',
             skills: ['游戏逻辑设计', '难度调节', '游戏记录', '用户界面优化'],
@@ -115,7 +115,7 @@ const learningGoals = {
     ],
     2: [
         {
-            week: '第13周',
+            week: '01',
             title: 'Flask基础：个人主页',
             description: 'Web框架入门、路由、模板',
             skills: ['Flask框架基础', '路由设计', 'Jinja2模板', '静态文件处理'],
@@ -123,7 +123,7 @@ const learningGoals = {
             keyPoints: ['Web框架', '路由系统', '模板渲染', 'HTTP协议']
         },
         {
-            week: '第14周',
+            week: '02',
             title: 'Web表单与用户输入',
             description: '表单处理、数据验证、用户交互',
             skills: ['HTML表单', 'Flask-WTF', '数据验证', '表单安全'],
@@ -131,7 +131,7 @@ const learningGoals = {
             keyPoints: ['表单处理', '数据验证', 'CSRF保护', '用户输入安全']
         },
         {
-            week: '第15周',
+            week: '03',
             title: 'SQLite数据库集成',
             description: '数据库基础、ORM、数据持久化',
             skills: ['SQLite数据库', 'SQLAlchemy ORM', '数据模型设计', 'CRUD操作'],
@@ -139,7 +139,7 @@ const learningGoals = {
             keyPoints: ['数据库设计', 'ORM使用', '数据关系', '持久化存储']
         },
         {
-            week: '第16周',
+            week: '04',
             title: '博客系统：文章管理',
             description: '内容管理、分页、搜索功能',
             skills: ['文章CRUD', '分页显示', '搜索功能', '富文本编辑'],
@@ -147,7 +147,7 @@ const learningGoals = {
             keyPoints: ['内容管理', '分页实现', '搜索算法', '用户体验']
         },
         {
-            week: '第17周',
+            week: '05',
             title: '用户认证系统',
             description: '登录注册、会话管理、权限控制',
             skills: ['用户认证', '会话管理', '密码加密', '权限装饰器'],
@@ -155,7 +155,7 @@ const learningGoals = {
             keyPoints: ['身份认证', '会话安全', '权限控制', '安全编程']
         },
         {
-            week: '第18周',
+            week: '06',
             title: 'RESTful API开发',
             description: 'API设计、JSON数据、接口文档',
             skills: ['REST API设计', 'JSON响应', 'HTTP状态码', 'API文档'],
@@ -163,7 +163,7 @@ const learningGoals = {
             keyPoints: ['API设计', 'RESTful规范', '接口测试', '文档编写']
         },
         {
-            week: '第19周',
+            week: '07',
             title: '文件上传与处理',
             description: '文件上传、图片处理、安全验证',
             skills: ['文件上传', '文件验证', '图片缩放', '安全检查'],
@@ -171,7 +171,7 @@ const learningGoals = {
             keyPoints: ['文件处理', '安全验证', '图片处理', '存储管理']
         },
         {
-            week: '第20周',
+            week: '08',
             title: '实时聊天室',
             description: 'WebSocket、实时通信、消息系统',
             skills: ['WebSocket协议', 'Socket.IO', '实时通信', '消息广播'],
@@ -179,7 +179,7 @@ const learningGoals = {
             keyPoints: ['实时通信', 'WebSocket', '并发处理', '用户体验']
         },
         {
-            week: '第21周',
+            week: '09',
             title: '数据可视化面板',
             description: '图表生成、数据展示、前端集成',
             skills: ['Chart.js集成', '数据图表', '前端交互', '动态更新'],
@@ -187,7 +187,7 @@ const learningGoals = {
             keyPoints: ['数据可视化', '前端集成', '交互设计', '实时更新']
         },
         {
-            week: '第22周',
+            week: '10',
             title: '在线投票系统',
             description: '投票逻辑、统计分析、防刷票',
             skills: ['投票逻辑', '结果统计', '防重复投票', '数据分析'],
@@ -195,7 +195,7 @@ const learningGoals = {
             keyPoints: ['业务逻辑', '数据统计', '安全防护', '结果展示']
         },
         {
-            week: '第23周',
+            week: '11',
             title: '邮件发送系统',
             description: 'SMTP协议、邮件模板、批量发送',
             skills: ['SMTP配置', '邮件模板', '附件处理', '发送队列'],
@@ -203,7 +203,7 @@ const learningGoals = {
             keyPoints: ['邮件协议', '模板系统', '任务队列', '异步处理']
         },
         {
-            week: '第24周',
+            week: '12',
             title: '网站部署与优化',
             description: '服务器部署、性能优化、监控',
             skills: ['服务器配置', 'Gunicorn部署', 'Nginx配置', '性能监控'],
@@ -211,7 +211,7 @@ const learningGoals = {
             keyPoints: ['服务器部署', '性能优化', '安全配置', '运维基础']
         },
         {
-            week: '第25周',
+            week: '13',
             title: '综合项目：在线商城',
             description: '电商系统、购物车、订单管理',
             skills: ['电商逻辑', '购物车设计', '订单系统', '支付集成'],
@@ -221,7 +221,7 @@ const learningGoals = {
     ],
     3: [
         {
-            week: '第26周',
+            week: '01',
             title: 'Tkinter桌面应用：计算器',
             description: 'GUI编程基础、事件处理、界面设计',
             skills: ['Tkinter基础', '组件使用', '事件绑定', '布局管理'],
@@ -229,7 +229,7 @@ const learningGoals = {
             keyPoints: ['GUI编程', '事件处理', '界面设计', '桌面应用']
         },
         {
-            week: '第27周',
+            week: '02',
             title: '文本编辑器',
             description: '文件操作、菜单系统、快捷键',
             skills: ['菜单栏设计', '文件对话框', '快捷键绑定', '文本处理'],
@@ -237,7 +237,7 @@ const learningGoals = {
             keyPoints: ['菜单系统', '文件对话框', '快捷键', '用户体验']
         },
         {
-            week: '第28周',
+            week: '03',
             title: '系统监控工具',
             description: '系统信息获取、实时监控、数据展示',
             skills: ['psutil库使用', '系统信息', '实时更新', '图表显示'],
@@ -245,7 +245,7 @@ const learningGoals = {
             keyPoints: ['系统编程', '实时监控', '数据可视化', '性能分析']
         },
         {
-            week: '第29周',
+            week: '04',
             title: 'PyQt应用：音乐播放器',
             description: 'PyQt框架、多媒体处理、现代GUI',
             skills: ['PyQt5/6基础', '音频处理', '播放列表', '界面美化'],
@@ -253,7 +253,7 @@ const learningGoals = {
             keyPoints: ['PyQt框架', '多媒体', '现代界面', '用户体验']
         },
         {
-            week: '第30周',
+            week: '05',
             title: '数据采集爬虫',
             description: '网络爬虫、数据提取、反爬虫处理',
             skills: ['requests和BeautifulSoup', '数据提取', '反爬虫', '数据存储'],
@@ -261,7 +261,7 @@ const learningGoals = {
             keyPoints: ['网络爬虫', '数据提取', '反爬处理', '数据清洗']
         },
         {
-            week: '第31周',
+            week: '06',
             title: 'Excel数据分析',
             description: 'pandas高级应用、数据透视表、可视化',
             skills: ['pandas高级操作', '数据透视表', 'matplotlib绘图', '报告生成'],
@@ -269,7 +269,7 @@ const learningGoals = {
             keyPoints: ['数据分析', '透视表', '数据可视化', '报告生成']
         },
         {
-            week: '第32周',
+            week: '07',
             title: '机器学习入门：房价预测',
             description: 'scikit-learn基础、线性回归、模型评估',
             skills: ['scikit-learn基础', '数据预处理', '线性回归', '模型评估'],
@@ -277,7 +277,7 @@ const learningGoals = {
             keyPoints: ['机器学习', '数据预处理', '模型训练', '预测评估']
         },
         {
-            week: '第33周',
+            week: '08',
             title: '图像识别：手写数字',
             description: '深度学习基础、神经网络、TensorFlow',
             skills: ['TensorFlow基础', '神经网络', '图像预处理', '模型训练'],
@@ -285,7 +285,7 @@ const learningGoals = {
             keyPoints: ['深度学习', '神经网络', '图像处理', '模型应用']
         },
         {
-            week: '第34周',
+            week: '09',
             title: '股票分析工具',
             description: '金融数据获取、技术指标、趋势分析',
             skills: ['金融数据API', '技术指标计算', '趋势分析', '投资策略'],
@@ -293,7 +293,7 @@ const learningGoals = {
             keyPoints: ['金融数据', '技术分析', '趋势预测', '量化分析']
         },
         {
-            week: '第35周',
+            week: '10',
             title: '自动化测试框架',
             description: 'pytest框架、单元测试、自动化测试',
             skills: ['pytest使用', '测试用例设计', '测试报告', '持续集成'],
@@ -301,7 +301,7 @@ const learningGoals = {
             keyPoints: ['自动化测试', '测试框架', '测试设计', '质量保证']
         },
         {
-            week: '第36周',
+            week: '11',
             title: '微信机器人',
             description: '微信API、自动回复、智能对话',
             skills: ['微信API使用', '自然语言处理', '自动回复', '智能对话'],
@@ -309,7 +309,7 @@ const learningGoals = {
             keyPoints: ['API集成', '自然语言', '自动化', '智能交互']
         },
         {
-            week: '第37周',
+            week: '12',
             title: '区块链简单实现',
             description: '区块链原理、加密算法、分布式系统',
             skills: ['区块链概念', '哈希算法', '数字签名', '共识机制'],
@@ -317,7 +317,7 @@ const learningGoals = {
             keyPoints: ['区块链', '加密技术', '分布式', '数据结构']
         },
         {
-            week: '第38周',
+            week: '13',
             title: 'DevOps工具：部署脚本',
             description: '自动化部署、服务器管理、运维工具',
             skills: ['自动化脚本', '服务器操作', '部署流程', '监控告警'],
@@ -327,7 +327,7 @@ const learningGoals = {
     ],
     4: [
         {
-            week: '第39-42周',
+            week: '01',
             title: '企业级Web应用开发',
             description: '大型Web应用、微服务架构、高并发处理',
             skills: ['Django框架', '微服务设计', 'Redis缓存', '消息队列', '负载均衡'],
@@ -335,7 +335,7 @@ const learningGoals = {
             keyPoints: ['企业级架构', '高并发处理', '缓存策略', '系统优化']
         },
         {
-            week: '第43-46周',
+            week: '02',
             title: '人工智能应用开发',
             description: '深度学习应用、计算机视觉、自然语言处理',
             skills: ['TensorFlow/PyTorch', 'OpenCV', 'NLTK', '模型部署', 'GPU计算'],
@@ -343,20 +343,12 @@ const learningGoals = {
             keyPoints: ['AI算法应用', '模型训练', '实时处理', '用户交互']
         },
         {
-            week: '第47-50周',
+            week: '03',
             title: '大数据处理平台',
             description: '数据工程、ETL流程、数据仓库、可视化面板',
             skills: ['Apache Spark', 'ETL设计', '数据仓库', '实时流处理', 'BI工具'],
             project: '企业数据分析平台，支持多数据源、实时分析、报表生成',
             keyPoints: ['大数据处理', '实时计算', '数据建模', '商业智能']
-        },
-        {
-            week: '第51-52周',
-            title: '个人项目总结与展示',
-            description: '项目整理、技术分享、职业规划',
-            skills: ['项目文档', '技术演讲', '代码重构', '开源贡献'],
-            project: '个人作品集网站，技术博客，开源项目贡献',
-            keyPoints: ['项目展示', '技术分享', '个人品牌', '职业发展']
         }
     ]
 };
