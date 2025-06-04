@@ -218,6 +218,25 @@ body {
     gap: 2rem;
 }
 
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.hero-actions .btn-primary,
+.hero-actions .btn-secondary {
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.hero-actions .btn-primary:hover,
+.hero-actions .btn-secondary:hover {
+    text-decoration: none;
+}
+
 .stat-item {
     text-align: center;
     padding: 1rem;
@@ -377,242 +396,225 @@ body {
     font-size: 0.8rem;
 }
 
-/* 作业管理样式 */
-.homework-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-}
-
-.homework-upload {
-    background: white;
-    border-radius: var(--border-radius);
-    padding: 2rem;
-    box-shadow: var(--shadow-md);
-}
-
-.upload-area {
-    border: 2px dashed var(--border-color);
-    border-radius: var(--border-radius);
-    padding: 3rem 2rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    transition: var(--transition);
-    cursor: pointer;
-}
-
-.upload-area:hover {
-    border-color: var(--primary-color);
-    background: rgba(59, 130, 246, 0.05);
-}
-
-.upload-area.dragover {
-    border-color: var(--primary-color);
-    background: rgba(59, 130, 246, 0.1);
-}
-
-.upload-area i {
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.homework-upload #fileInput {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    white-space: nowrap;
-    border: 0;
-}
-
-.upload-area h3 {
-    margin-bottom: 0.5rem;
-}
-
-.upload-area p {
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-}
-
-.upload-hint {
-    font-size: 0.9rem;
-    font-style: italic;
-}
-
-.upload-actions {
-    margin-top: 1rem;
-    text-align: center;
-}
-
-.homework-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.homework-list {
-    background: white;
-    border-radius: var(--border-radius);
-    padding: 2rem;
-    box-shadow: var(--shadow-md);
-}
-
-.homework-items {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.homework-item {
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    padding: 1rem;
-    transition: var(--transition);
-}
-
-.homework-item:hover {
-    box-shadow: var(--shadow-sm);
-}
-
-.homework-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-}
-
-.homework-title {
-    font-weight: 600;
-    color: var(--text-primary);
-}
-
-.homework-status {
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    font-weight: 500;
-}
-
-.homework-status.submitted {
-    background: var(--success-color);
-    color: white;
-}
-
-.homework-meta {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-}
-
-.homework-files {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.file-tag {
-    background: var(--light-color);
-    border: 1px solid var(--border-color);
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.8rem;
-}
-
-.homework-actions {
-    display: flex;
-    gap: 0.5rem;
-}
 
 /* 视频学习样式 */
-.video-container {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 2rem;
+.video-featured {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.video-player {
+.video-card {
     background: white;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-md);
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.video-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.video-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
 }
 
-.video-wrapper {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%; /* 16:9 比例 */
-}
-
-.video-wrapper iframe {
+.play-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-.video-controls {
-    padding: 1rem;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
     display: flex;
-    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 2;
 }
 
-.video-playlist {
+.video-card:hover .play-overlay {
+    transform: scale(1.1);
     background: white;
-    border-radius: var(--border-radius);
-    padding: 1.5rem;
-    box-shadow: var(--shadow-md);
 }
 
-.video-episodes {
+.play-overlay i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-left: 4px; /* 调整播放图标位置 */
+}
+
+.video-duration {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.video-platform {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #00A1D6;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 6px;
+    z-index: 2;
+}
+
+.video-platform i {
+    font-size: 1.2rem;
+}
+
+.video-info {
+    padding: 2rem;
+}
+
+.video-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.video-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.video-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.video-meta i {
+    color: var(--primary-color);
+}
+
+.video-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.video-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
     margin-bottom: 2rem;
-    max-height: 400px;
-    overflow-y: auto;
 }
 
-.episode-item {
+.feature-tag {
+    background: linear-gradient(135deg, var(--primary-color), #2563EB);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.feature-tag i {
+    font-size: 0.8rem;
+}
+
+.video-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.1rem;
     padding: 1rem;
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    margin-bottom: 0.5rem;
-    cursor: pointer;
-    transition: var(--transition);
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 10px;
+    transition: all 0.3s ease;
 }
 
-.episode-item:hover {
-    background: var(--light-color);
-}
-
-.episode-item.active {
+.video-card:hover .video-action {
     background: var(--primary-color);
     color: white;
+    transform: translateY(-2px);
 }
 
-.episode-title {
-    font-weight: 600;
-    margin-bottom: 0.25rem;
+.video-action i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
 }
 
-.episode-duration {
-    font-size: 0.8rem;
-    color: var(--text-secondary);
+.video-card:hover .video-action i {
+    transform: translateX(4px);
 }
 
-.episode-item.active .episode-duration {
-    color: rgba(255, 255, 255, 0.8);
+/* 视频卡片响应式设计 */
+@media (max-width: 768px) {
+    .video-thumbnail {
+        height: 200px;
+    }
+    
+    .video-info {
+        padding: 1.5rem;
+    }
+    
+    .video-title {
+        font-size: 1.4rem;
+    }
+    
+    .video-meta {
+        gap: 1rem;
+    }
+    
+    .play-overlay {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .play-overlay i {
+        font-size: 1.5rem;
+    }
 }
 
-.add-episode {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+@media (max-width: 480px) {
+    .video-features {
+        gap: 0.5rem;
+    }
+    
+    .feature-tag {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+    
+    .video-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 }
 
 /* 文档中心样式 */
@@ -693,113 +695,6 @@ body {
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
     font-size: 0.7rem;
-}
-
-/* 个人中心样式 */
-.profile-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-}
-
-.profile-info {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.profile-card {
-    background: white;
-    border-radius: var(--border-radius);
-    padding: 2rem;
-    box-shadow: var(--shadow-md);
-    text-align: center;
-}
-
-.profile-avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: var(--gradient-primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1rem;
-}
-
-.profile-avatar i {
-    font-size: 3rem;
-    color: white;
-}
-
-.profile-details {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.progress-overview {
-    background: white;
-    border-radius: var(--border-radius);
-    padding: 2rem;
-    box-shadow: var(--shadow-md);
-}
-
-.progress-bar {
-    width: 100%;
-    height: 10px;
-    background: var(--border-color);
-    border-radius: 5px;
-    overflow: hidden;
-    margin: 1rem 0;
-}
-
-.progress-fill {
-    height: 100%;
-    background: var(--gradient-primary);
-    transition: width 0.5s ease;
-}
-
-.badges-section {
-    background: white;
-    border-radius: var(--border-radius);
-    padding: 2rem;
-    box-shadow: var(--shadow-md);
-}
-
-.badges-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 1rem;
-}
-
-.badge-item {
-    text-align: center;
-    padding: 1rem;
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    transition: var(--transition);
-}
-
-.badge-item:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-sm);
-}
-
-.badge-item.earned {
-    background: var(--gradient-secondary);
-    color: white;
-    border-color: transparent;
-}
-
-.badge-icon {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-
-.badge-name {
-    font-size: 0.9rem;
-    font-weight: 500;
 }
 
 /* 表单控件样式 */
@@ -1003,11 +898,6 @@ body {
         justify-content: center;
     }
 
-    .homework-container,
-    .video-container,
-    .profile-container {
-        grid-template-columns: 1fr;
-    }
 
     .section {
         padding: 1rem;
@@ -1028,34 +918,14 @@ body {
 }
 
 @media (max-width: 480px) {
-    .nav-container {
-        padding: 1rem;
+    .learning-features {
+        grid-template-columns: 1fr;
     }
-
-    .hero-content h1 {
-        font-size: 1.5rem;
-    }
-
-    .section-header h2 {
-        font-size: 2rem;
-    }
-
-    .hero-stats {
+    
+    .feature-card {
+        padding: 1.5rem;
         flex-direction: column;
-        gap: 1rem;
-    }
-
-    .video-controls {
-        flex-direction: column;
-    }
-
-    .docs-search {
-        flex-direction: column;
-    }
-
-    .modal-content {
-        margin: 10% auto;
-        padding: 1rem;
+        text-align: center;
     }
 }
 
@@ -1295,3 +1165,318 @@ body {
     font-weight: 500;
     border: 1px solid rgba(34, 197, 94, 0.2);
 }
+
+/* 文档中心样式 */
+.docs-featured {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.docs-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.docs-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.docs-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(135deg, #306998 0%, #FFD43B 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.docs-overlay {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.docs-card:hover .docs-overlay {
+    transform: scale(1.1);
+    background: white;
+}
+
+.docs-overlay i {
+    font-size: 3rem;
+    color: #306998;
+}
+
+.docs-count {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.docs-platform {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #24292f;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 6px;
+    z-index: 2;
+}
+
+.docs-platform i {
+    font-size: 1.2rem;
+}
+
+.docs-info {
+    padding: 2rem;
+}
+
+.docs-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.docs-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.docs-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.docs-meta i {
+    color: var(--primary-color);
+}
+
+.docs-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.docs-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.docs-features .feature-tag {
+    background: linear-gradient(135deg, var(--primary-color), #2563EB);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.docs-features .feature-tag i {
+    font-size: 0.8rem;
+}
+
+.docs-links {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.docs-link-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: var(--light-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.docs-link-item:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.docs-link-item i {
+    font-size: 1rem;
+}
+
+.docs-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 1rem;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.docs-card:hover .docs-action {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.docs-action i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.docs-card:hover .docs-action i {
+    transform: translateX(4px);
+}
+
+/* 文档卡片响应式设计 */
+@media (max-width: 768px) {
+    .docs-thumbnail {
+        height: 200px;
+    }
+    
+    .docs-info {
+        padding: 1.5rem;
+    }
+    
+    .docs-title {
+        font-size: 1.4rem;
+    }
+    
+    .docs-meta {
+        gap: 1rem;
+    }
+    
+    .docs-overlay {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .docs-overlay i {
+        font-size: 2rem;
+    }
+    
+    .docs-links {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .docs-features {
+        gap: 0.5rem;
+    }
+    
+    .docs-features .feature-tag {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+    
+    .docs-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .docs-links {
+        gap: 0.5rem;
+    }
+    
+    .docs-link-item {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* 学习特色功能 */
+.learning-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), #2563EB);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.feature-content h3 {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.feature-content p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+

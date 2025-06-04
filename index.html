@@ -16,53 +16,73 @@
     <!-- 导航栏 -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
-                <i class="fab fa-python"></i>
+            <div class="nav-brand">
+                <i class="fas fa-code"></i>
                 <span>PyBegin</span>
             </div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link active">首页</a></li>
                 <li><a href="#goals" class="nav-link">学习目标</a></li>
-                <li><a href="#homework" class="nav-link">作业管理</a></li>
                 <li><a href="#videos" class="nav-link">视频学习</a></li>
                 <li><a href="#docs" class="nav-link">文档中心</a></li>
-                <li><a href="#profile" class="nav-link">个人中心</a></li>
             </ul>
-            <button class="nav-toggle" aria-label="切换导航菜单" aria-expanded="false">
+            <div class="nav-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
-            </button>
+            </div>
         </div>
     </nav>
 
     <!-- 主要内容区域 -->
     <main class="main-content" id="main-content">
-        <!-- 首页区域 -->
+        <!-- 首页 -->
         <section id="home" class="section active">
             <div class="hero">
                 <div class="hero-content">
                     <h1>欢迎来到 PyBegin</h1>
-                    <p>专为Python零基础学习者打造的学习平台</p>
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <span class="stat-number" id="completedGoals">0</span>
-                            <span class="stat-label">已完成目标</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" id="totalBadges">0</span>
-                            <span class="stat-label">获得勋章</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" id="submittedHomework">0</span>
-                            <span class="stat-label">提交作业</span>
-                        </div>
+                    <p>一个专为Python初学者设计的学习平台</p>
+                    <div class="hero-actions">
+                        <button class="btn-primary" onclick="navigateToSection('goals')">开始学习</button>
+                        <button class="btn-secondary" onclick="navigateToSection('videos')">观看教程</button>
                     </div>
                 </div>
                 <div class="hero-image">
                     <i class="fab fa-python"></i>
                 </div>
             </div>
+            
+            <div class="learning-features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>系统化学习路径</h3>
+                        <p>从零基础到进阶，分阶段的学习目标让你循序渐进掌握Python编程</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>优质视频教程</h3>
+                        <p>精选高质量的Python学习视频，帮助你更直观地理解编程概念</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>丰富文档资源</h3>
+                        <p>汇集Python生态系统中最优秀的库和工具文档，助力你的开发之路</p>
+                    </div>
+                </div>
+            </div>
+
+
         </section>
 
         <!-- 学习目标区域 -->
@@ -103,70 +123,67 @@
             </div>
         </section>
 
-        <!-- 作业管理区域 -->
-        <section id="homework" class="section">
-            <div class="section-header">
-                <h2>作业管理</h2>
-                <p>上传、预览和管理您的学习作业</p>
-            </div>
-            <div class="homework-container">
-                <div class="homework-upload">
-                    <input type="file" id="fileInput" accept=".py,.zip,.md,.txt" multiple aria-label="选择作业文件" title="选择作业文件">
-                    <div class="upload-area" id="uploadArea" tabindex="0" role="button" aria-label="文件上传区域，点击或拖拽文件到此处上传">
-                        <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
-                        <h3>上传作业文件</h3>
-                        <p>支持 .py, .zip, .md 格式</p>
-                        <p class="upload-hint">点击此区域或拖拽文件到此处</p>
-                    </div>
-                    <div class="upload-actions">
-                        <button class="btn-primary" onclick="document.getElementById('fileInput').click()" aria-label="打开文件选择器">
-                            <i class="fas fa-folder-open" aria-hidden="true"></i>
-                            选择文件
-                        </button>
-                    </div>
-                    <div class="homework-form">
-                        <label for="homeworkWeek" class="form-label">作业周次</label>
-                        <select id="homeworkWeek" class="form-control" aria-label="选择作业周次">
-                            <option value="">选择作业周次</option>
-                        </select>
-                        <label for="homeworkNotes" class="form-label">作业说明</label>
-                        <textarea id="homeworkNotes" class="form-control" placeholder="作业说明或学习笔记..." aria-label="作业说明或学习笔记"></textarea>
-                        <button class="btn-primary" id="submitHomework">提交作业</button>
-                    </div>
-                </div>
-                <div class="homework-list">
-                    <h3>已提交作业</h3>
-                    <div id="homeworkList" class="homework-items"></div>
-                </div>
-            </div>
-        </section>
 
         <!-- 视频学习区域 -->
         <section id="videos" class="section">
             <div class="section-header">
                 <h2>视频学习</h2>
-                <p>观看Python学习视频，选择不同集数</p>
+                <p>精选Python零基础入门教程</p>
             </div>
-            <div class="video-container">
-                <div class="video-player">
-                    <div class="video-wrapper">
-                        <iframe id="videoFrame" src="" allowfullscreen title="学习视频播放器"></iframe>
+            <div class="video-featured">
+                <div class="video-card" onclick="window.open('https://www.bilibili.com/video/BV1ex411x7Em/?spm_id_from=333.337.search-card.all.click', '_blank')">
+                    <div class="video-thumbnail">
+                        <div class="play-overlay">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-duration">4:17:13</div>
+                        <div class="video-platform">
+                            <i class="fab fa-bilibili"></i>
+                        </div>
                     </div>
-                    <div class="video-controls">
-                        <label for="videoUrl" class="form-label">视频链接</label>
-                        <input type="url" id="videoUrl" placeholder="输入视频链接（支持YouTube、Bilibili等）" class="form-control" aria-label="输入视频链接">
-                        <button id="loadVideo" class="btn-primary">加载视频</button>
-                    </div>
-                </div>
-                <div class="video-playlist">
-                    <h3>视频列表</h3>
-                    <div id="videoList" class="video-episodes"></div>
-                    <div class="add-episode">
-                        <label for="episodeTitle" class="form-label">集数标题</label>
-                        <input type="text" id="episodeTitle" placeholder="集数标题" class="form-control" aria-label="集数标题">
-                        <label for="episodeUrl" class="form-label">视频链接</label>
-                        <input type="url" id="episodeUrl" placeholder="视频链接" class="form-control" aria-label="视频链接">
-                        <button id="addEpisode" class="btn-secondary">添加集数</button>
+                    <div class="video-info">
+                        <h3 class="video-title">Python零基础入门教程完整版</h3>
+                        <div class="video-meta">
+                            <span class="video-author">
+                                <i class="fas fa-user"></i>
+                                黑马程序员
+                            </span>
+                            <span class="video-stats">
+                                <i class="fas fa-eye"></i>
+                                1.2M 观看
+                            </span>
+                            <span class="video-date">
+                                <i class="fas fa-clock"></i>
+                                2023年
+                            </span>
+                        </div>
+                        <p class="video-description">
+                            这是一套完整的Python零基础入门教程，从变量、数据类型开始，逐步深入到函数、面向对象编程、文件操作、异常处理等核心概念。
+                            课程内容丰富，案例实用，适合完全没有编程基础的同学学习。通过本教程的学习，你将掌握Python编程的基础知识，
+                            为后续的Web开发、数据分析等方向打下坚实基础。
+                        </p>
+                        <div class="video-features">
+                            <span class="feature-tag">
+                                <i class="fas fa-star"></i>
+                                零基础友好
+                            </span>
+                            <span class="feature-tag">
+                                <i class="fas fa-code"></i>
+                                实战案例
+                            </span>
+                            <span class="feature-tag">
+                                <i class="fas fa-graduation-cap"></i>
+                                系统学习
+                            </span>
+                            <span class="feature-tag">
+                                <i class="fas fa-time"></i>
+                                4小时+
+                            </span>
+                        </div>
+                        <div class="video-action">
+                            <span>点击观看完整教程</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -176,60 +193,85 @@
         <section id="docs" class="section">
             <div class="section-header">
                 <h2>Python库文档中心</h2>
-                <p>查询和学习Python常用库的使用方法</p>
+                <p>精选Python生态系统中最优秀的库和工具资源</p>
             </div>
-            <div class="docs-container">
-                <div class="docs-search">
-                    <label for="docSearch" class="form-label">搜索Python库</label>
-                    <input type="text" id="docSearch" placeholder="搜索Python库..." class="form-control" aria-label="搜索Python库">
-                    <button id="searchDocs" class="btn-primary">搜索</button>
-                </div>
-                <div class="docs-categories">
-                    <div class="category-tabs">
-                        <button class="tab-btn active" data-category="basic">基础库</button>
-                        <button class="tab-btn" data-category="web">Web开发</button>
-                        <button class="tab-btn" data-category="data">数据科学</button>
-                        <button class="tab-btn" data-category="gui">GUI开发</button>
+            <div class="docs-featured">
+                <div class="docs-card" onclick="window.open('https://jobbole.github.io/awesome-python-cn/', '_blank')">
+                    <div class="docs-thumbnail">
+                        <div class="docs-overlay">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="docs-count">1000+ 库</div>
+                        <div class="docs-platform">
+                            <i class="fab fa-github"></i>
+                        </div>
                     </div>
-                </div>
-                <div class="docs-content">
-                    <div id="docsGrid" class="docs-grid"></div>
+                    <div class="docs-info">
+                        <h3 class="docs-title">Awesome Python 中文版</h3>
+                        <div class="docs-meta">
+                            <span class="docs-author">
+                                <i class="fas fa-users"></i>
+                                伯乐在线团队
+                            </span>
+                            <span class="docs-stats">
+                                <i class="fas fa-star"></i>
+                                15.6K Stars
+                            </span>
+                            <span class="docs-updated">
+                                <i class="fas fa-sync-alt"></i>
+                                持续更新
+                            </span>
+                        </div>
+                        <p class="docs-description">
+                            这是一个精心策划的Python框架、库、软件和资源列表，涵盖了Web开发、数据科学、机器学习、网络爬虫、
+                            图像处理、文本处理等各个领域。每个库都经过社区验证，包含详细的介绍和使用场景，
+                            是Python开发者必备的资源宝库。无论你是初学者还是资深开发者，都能在这里找到合适的工具。
+                        </p>
+                        <div class="docs-features">
+                            <span class="feature-tag">
+                                <i class="fas fa-code"></i>
+                                Web框架
+                            </span>
+                            <span class="feature-tag">
+                                <i class="fas fa-chart-line"></i>
+                                数据分析
+                            </span>
+                            <span class="feature-tag">
+                                <i class="fas fa-robot"></i>
+                                机器学习
+                            </span>
+                            <span class="feature-tag">
+                                <i class="fas fa-spider"></i>
+                                网络爬虫
+                            </span>
+                            <span class="feature-tag">
+                                <i class="fas fa-image"></i>
+                                图像处理
+                            </span>
+                            <span class="feature-tag">
+                                <i class="fas fa-database"></i>
+                                数据库
+                            </span>
+                        </div>
+                        <div class="docs-links">
+                            <div class="docs-link-item" onclick="event.stopPropagation(); window.open('https://github.com/jobbole/awesome-python-cn', '_blank')">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub 源码</span>
+                            </div>
+                            <div class="docs-link-item" onclick="event.stopPropagation(); window.open('https://jobbole.github.io/awesome-python-cn/', '_blank')">
+                                <i class="fas fa-globe"></i>
+                                <span>在线文档</span>
+                            </div>
+                        </div>
+                        <div class="docs-action">
+                            <span>点击访问完整资源库</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- 个人中心区域 -->
-        <section id="profile" class="section">
-            <div class="section-header">
-                <h2>个人中心</h2>
-                <p>管理您的学习信息和成就</p>
-            </div>
-            <div class="profile-container">
-                <div class="profile-info">
-                    <div class="profile-card">
-                        <div class="profile-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="profile-details">
-                            <label for="userName" class="form-label">您的姓名</label>
-                            <input type="text" id="userName" placeholder="输入您的姓名" class="form-control" aria-label="输入您的姓名">
-                            <button id="saveProfile" class="btn-primary">保存信息</button>
-                        </div>
-                    </div>
-                    <div class="progress-overview">
-                        <h3>学习进度</h3>
-                        <div class="progress-bar">
-                            <div class="progress-fill" id="overallProgress"></div>
-                        </div>
-                        <span id="progressText">0%</span>
-                    </div>
-                </div>
-                <div class="badges-section">
-                    <h3>获得勋章</h3>
-                    <div id="badgesContainer" class="badges-grid"></div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- 模态框 -->
